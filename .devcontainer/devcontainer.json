@@ -1,0 +1,32 @@
+{
+  "name": "Terraform MongoDB Atlas",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    }
+  },
+  
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "mongodb.mongodb-vscode"
+      ],
+      "settings": {
+        "terraform.languageServer.enable": true,
+        "terraform.experimentalFeatures.validateOnSave": true
+      }
+    }
+  },
+  
+  "remoteUser": "vscode"
+}
